@@ -25,17 +25,17 @@ public class FarmController {
         return farmService.getAllMethods();
     }
 
-    @GetMapping("/getBy")
+    @GetMapping("/getBy/{farmId}")
     private Optional<FarmEntity> getMethod(@RequestBody int farmId){
         return farmService.getMethods(farmId);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/update/{farmId}")
     private void updateMethod(@RequestBody FarmEntity userId){
         farmService.updateMethods(userId);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{farmId}")
     private String deleteMethod(@PathVariable int farmId){
         return farmService.deleteMethods(farmId);
     }
